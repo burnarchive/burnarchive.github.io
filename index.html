@@ -33,10 +33,6 @@
       <a href="#sold">Архив</a>
       <a href="#info">Инфо</a>
     </nav>
-    <button class="cart-btn" id="cartBtn" aria-label="Корзина">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-      <span id="cartN">0</span>
-    </button>
   </div>
 </header>
 
@@ -163,23 +159,6 @@
   <div class="modal-body" id="modalBody"></div>
 </div>
 
-<!-- корзина -->
-<aside class="drawer" id="drawer" aria-label="Корзина" hidden>
-  <div class="drawer-head">
-    <h3>Корзина</h3>
-    <button class="x" data-close aria-label="Закрыть">×</button>
-  </div>
-  <div class="drawer-list" id="cartList"></div>
-  <form class="order" id="orderForm">
-    <div class="total"><span>Итого</span><b id="cartTotal">0 ₴</b></div>
-    <input id="fName" placeholder="Имя" required>
-    <input id="fTg" placeholder="Твой Telegram (@ник)" required>
-    <input id="fCity" placeholder="Город и отделение НП / страна">
-    <textarea id="fNote" rows="2" placeholder="Комментарий, вопросы, торг"></textarea>
-    <button class="btn btn-fire full" type="submit">Оформить в Telegram</button>
-    <p class="muted small">Текст заказа скопируется — откроется чат с @burnadmin, просто вставь и отправь.</p>
-  </form>
-</aside>
 
 <div class="toast" id="toast" hidden></div>
 

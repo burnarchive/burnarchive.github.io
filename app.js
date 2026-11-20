@@ -14,15 +14,6 @@
     ['outer', 'Куртки', ['куртка']], ['shoes', 'Обувь', ['обувь']], ['acc', 'Аксессуары', ['аксессуары']]
   ];
   const state = { q: '', brand: '', type: '', st: '', sort: 'new' };
-  let cart = [];
-  try { cart = JSON.parse(localStorage.getItem('burn_cart') || '[]').map(String).filter(k => live.some(p => String(p.id) === k.split('|')[0])); } catch (e) { cart = []; }
-  const keyOf = (id, opt) => opt == null ? String(id) : id + '|' + opt;
-  const resolve = k => {
-    const [id, opt] = k.split('|'); const p = ALL.find(x => String(x.id) === id);
-    const o = opt != null && p.options ? p.options.find(x => x.label === opt) : null;
-    return { p, name: o ? `${p.name} — ${o.label}` : p.name, price: o ? o.price : p.price };
-  };
-  const hasInCart = p => cart.some(k => k.split('|')[0] === String(p.id));
   const priceLabel = p => p.options ? 'от ' + money(Math.min(...p.options.map(o => o.price))) : money(p.price);
 
   /* ---------- шапка, статы, бегущая строка ---------- */
@@ -66,12 +57,10 @@
 
   /* ---------- карточки ---------- */
   const card = p => {
-    const inCart = hasInCart(p);
     const alt = p.photos[1] ? `<img class="alt" src="${p.photos[1]}" alt="" loading="lazy">` : '';
     return `<article class="card reveal" data-id="${p.id}" tabindex="0">
       <div class="ph">
         <span class="badge ${p.status}">${ST[p.status]}</span>
-        ${p.status !== 'sold' ? `<button class="add ${inCart ? 'in-cart' : ''}" ${p.options ? `data-open="${p.id}"` : `data-add="${p.id}"`} aria-label="В корзину">${inCart ? '✓' : '+'}</button>` : ''}
         <img src="${p.photos[0] || 'logo.jpg'}" alt="${esc(p.name)}" loading="lazy">${alt}
       </div>
       <div class="meta">
@@ -112,10 +101,6 @@
   function observe() { document.querySelectorAll('.reveal:not(.vis)').forEach(el => io ? io.observe(el) : el.classList.add('vis')); }
 
   document.addEventListener('click', e => {
-    const add = e.target.closest('[data-add]');
-    if (add) { e.stopPropagation(); toggleCart(add.dataset.add); return; }
-    const op = e.target.closest('[data-open]');
-    if (op) { e.stopPropagation(); openModal(+op.dataset.open); return; }
     const c = e.target.closest('.card');
     if (c) openModal(+c.dataset.id);
   });
@@ -130,7 +115,6 @@
   function openModal(id) {
     const p = ALL.find(x => x.id === id); if (!p) return;
     gp = p; gi = 0;
-    const inCart = cart.includes(String(p.id));
     const many = p.photos.length > 1;
     $('#modalBody').innerHTML = `
       <div class="gallery">
@@ -152,10 +136,7 @@
         <div class="acts">
           ${p.status === 'sold'
             ? `<a class="btn btn-fire full" href="https://t.me/${ADMIN}" target="_blank" rel="noopener">Хочу похожее — привези</a>`
-            : `${p.options ? p.options.map(o => { const k = keyOf(p.id, o.label), on = cart.includes(k);
-                  return `<button class="btn ${on ? 'btn-ghost' : 'btn-fire'} full" data-add="${esc(k)}">${on ? '✓ ' + esc(o.label) + ' в корзине — убрать' : esc(o.label) + ' — ' + money(o.price) + ' · в корзину'}</button>`; }).join('')
-                : `<button class="btn btn-fire full" data-add="${p.id}">${inCart ? '✓ В корзине — убрать' : 'В корзину'}</button>`}
-               <a class="btn btn-ghost full" href="https://t.me/${ADMIN}" target="_blank" rel="noopener">Спросить / торг в Telegram</a>`}
+            : `<a class="btn btn-fire full" href="https://t.me/${ADMIN}" target="_blank" rel="noopener">Купить — написать @${ADMIN}</a>`}
           <a class="tglink" href="${p.post}" target="_blank" rel="noopener">Пост в канале ↗</a>
         </div>
       </div>`;
@@ -179,58 +160,11 @@
   $('#modal').addEventListener('touchend', e => { if (e.target.id === 'gMain' && tx) { const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 40) gal(dx < 0 ? 1 : -1); tx = 0; } });
 
   function closeAll() {
-    $('#veil').hidden = true; $('#modal').hidden = true; $('#drawer').hidden = true; document.body.classList.remove('lock');
+    $('#veil').hidden = true; $('#modal').hidden = true; document.body.classList.remove('lock');
   }
   $('#veil').addEventListener('click', closeAll);
   document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', closeAll));
 
-  /* ---------- корзина ---------- */
-  const save = () => localStorage.setItem('burn_cart', JSON.stringify(cart));
-  function toggleCart(id) {
-    const i = cart.indexOf(id);
-    if (i >= 0) { cart.splice(i, 1); toast('Убрано из корзины'); }
-    else { cart.push(id); toast('🔥 Добавлено в корзину'); $('#cartBtn').classList.remove('bump'); void $('#cartBtn').offsetWidth; $('#cartBtn').classList.add('bump'); }
-    save(); syncCart(); render();
-    if (!$('#modal').hidden && gp) openModal(gp.id);
-  }
-  function syncCart() {
-    $('#cartN').textContent = cart.length;
-    const items = cart.map(resolve);
-    $('#cartList').innerHTML = items.length ? items.map(({ p, name, price }, i) => `
-      <div class="ci">
-        <img src="${p.photos[0] || 'logo.jpg'}" alt="">
-        <div><div class="n">${esc(name)}</div><div class="s">${esc(p.size)} · ${ST[p.status]}</div><button data-add="${esc(cart[i])}">убрать</button></div>
-        <div class="p">${money(price)}</div>
-      </div>`).join('') : `<p class="empty">Корзина пуста.<br>Добавь что-нибудь горячее 🔥</p>`;
-    $('#cartTotal').textContent = money(items.reduce((s, x) => s + (x.price || 0), 0)) .replace('Цена Договорная', '0 ₴');
-    $('#orderForm').hidden = !items.length;
-  }
-  $('#cartBtn').addEventListener('click', () => { syncCart(); $('#veil').hidden = false; $('#drawer').hidden = false; document.body.classList.add('lock'); });
-
-  $('#orderForm').addEventListener('submit', async e => {
-    e.preventDefault();
-    const items = cart.map(resolve);
-    const total = items.reduce((s, x) => s + (x.price || 0), 0);
-    const lines = [
-      '🔥 Заказ с сайта burnarchive-shop',
-      '',
-      ...items.map((x, i) => `${i + 1}. ${x.name} — ${x.p.size} — ${money(x.price)}\n   ${x.p.post}`),
-      '',
-      `Итого: ${money(total).replace('Цена Договорная', '0 ₴')}${items.some(x => !x.price) ? ' (+ позиции с договорной ценой)' : ''}`,
-      '',
-      `Имя: ${$('#fName').value.trim()}`,
-      `Telegram: ${$('#fTg').value.trim()}`,
-      $('#fCity').value.trim() ? `Доставка: ${$('#fCity').value.trim()}` : '',
-      $('#fNote').value.trim() ? `Комментарий: ${$('#fNote').value.trim()}` : ''
-    ].filter((l, i, a) => l !== '' || (a[i - 1] !== '' && i > 0)).join('\n');
-    let copied = false;
-    try { await navigator.clipboard.writeText(lines); copied = true; } catch (err) {
-      const ta = document.createElement('textarea'); ta.value = lines; document.body.appendChild(ta); ta.select();
-      try { copied = document.execCommand('copy'); } catch (e2) {} ta.remove();
-    }
-    toast(copied ? '✅ Заказ скопирован — вставь в чат с @' + ADMIN : 'Открываю чат с @' + ADMIN);
-    setTimeout(() => window.open(`https://t.me/${ADMIN}`, '_blank', 'noopener'), 600);
-  });
 
   let tt;
   function toast(m) { const t = $('#toast'); t.textContent = m; t.hidden = false; clearTimeout(tt); tt = setTimeout(() => t.hidden = true, 2600); }
@@ -267,6 +201,6 @@
   }
   if (!reduce) tick();
 
-  syncCart(); render();
+  render();
   setTimeout(() => { const l = document.getElementById('loader'); if (l) l.remove(); }, 2600);
 })();
