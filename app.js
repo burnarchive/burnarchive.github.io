@@ -35,18 +35,7 @@
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
   const cnt = s => live.filter(p => p.status === s).length;
-  $('#heroLive').textContent = cnt('in');
   $('#upd').textContent = new Date(DATA.updated).toLocaleDateString('ru-RU');
-  const countUp = (el, to) => {
-    const t0 = performance.now(), d = 1200;
-    const step = t => { const k = Math.min(1, (t - t0) / d); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); };
-    setTimeout(() => requestAnimationFrame(step), 1500);
-  };
-  countUp($('#stIn'), cnt('in')); countUp($('#stTr'), cnt('transit')); countUp($('#stSold'), soldCount);
-
-  const brands = [...new Set(ALL.map(p => p.brand))].filter(b => !['No Name', 'Vintage', 'Japan Brand'].includes(b));
-  const mq = brands.map(b => `<span>${esc(b)}</span><i>✦</i>`).join('');
-  $('#marquee').innerHTML = mq + mq;
 
   /* ---------- фильтры ---------- */
   const brandSel = $('#brand');
