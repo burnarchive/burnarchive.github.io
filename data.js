@@ -422,7 +422,7 @@ window.SHOP_DATA = {
   },
   {
    "id": 597,
-   "brand": "Vintage",
+   "brand": "No Name",
    "name": "Military Vintage Puffer",
    "type": "куртка",
    "price": 2800,
