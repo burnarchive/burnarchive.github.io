@@ -6,6 +6,7 @@
   const sold = ALL.filter(p => p.status === 'sold');
   const soldCount = sold.reduce((n, p) => n + (p.qty || 1), 0);
   const $ = s => document.querySelector(s);
+  const th = s => /^img\/[^/]+\.jpg$/.test(s) ? s.replace(/^img\/(.+)\.jpg$/, 'img/t/$1.webp') : s;
   const dm = text => `https://t.me/${ADMIN}?text=${encodeURIComponent(text)}`;
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const money = n => n ? n.toLocaleString('ru-RU').replace(/,/g, ' ') + ' ₴' : 'Цена Договорная';
@@ -69,12 +70,12 @@
 
   /* ---------- карточки ---------- */
   const card = p => {
-    const alt = p.photos[1] ? `<img class="alt" src="${p.photos[1]}" alt="" loading="lazy">` : '';
+    const alt = p.photos[1] ? `<img class="alt" src="${th(p.photos[1])}" data-full="${p.photos[1]}" onerror="this.onerror=null;this.src=this.dataset.full" alt="" loading="lazy">` : '';
     return `<article class="card reveal" data-id="${p.id}" tabindex="0">
       <div class="ph">
         <span class="badge ${p.status}${p.status !== 'sold' ? ' badge-ph' : ''}">${ST[p.status]}</span>
         ${p.qty > 1 ? `<span class="qty" style="position:absolute;top:8px;right:12px;z-index:2;font-family:Unbounded,sans-serif;font-weight:900;font-size:30px;letter-spacing:-.04em;line-height:1;transform:rotate(-12deg);background:linear-gradient(100deg,#b3140c,#ff3d00 30%,#ff7a1a 60%,#ffc93c);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 6px rgba(0,0,0,.8)) drop-shadow(0 0 12px rgba(255,61,0,.6))">x${p.qty}</span>` : ''}
-        <img src="${p.photos[0] || 'logo.jpg'}" alt="${esc(p.name)}" loading="lazy">${alt}
+        <img src="${th(p.photos[0] || 'logo.jpg')}" data-full="${p.photos[0] || 'logo.jpg'}" onerror="this.onerror=null;this.src=this.dataset.full" alt="${esc(p.name)}" loading="lazy">${alt}
       </div>
       <div class="meta">
         <span class="brand">${esc(p.brand)}</span>
@@ -133,7 +134,7 @@
       <div class="gallery">
         <img class="main" id="gMain" src="${p.photos[0] || 'logo.jpg'}" alt="${esc(p.name)}">
         ${many ? `<button class="gnav prev" data-g="-1" aria-label="Назад">‹</button><button class="gnav next" data-g="1" aria-label="Вперёд">›</button>
-        <div class="thumbs">${p.photos.map((s, i) => `<img src="${s}" data-i="${i}" class="${i ? '' : 'on'}" alt="">`).join('')}</div>` : ''}
+        <div class="thumbs">${p.photos.map((s, i) => `<img src="${th(s)}" data-full="${s}" onerror="this.onerror=null;this.src=this.dataset.full" data-i="${i}" class="${i ? '' : 'on'}" alt="">`).join('')}</div>` : ''}
       </div>
       <div class="details">
         <span class="badge ${p.status}" style="position:static;align-self:flex-start">${ST[p.status]}</span>
