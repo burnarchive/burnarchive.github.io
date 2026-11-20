@@ -6,6 +6,7 @@
   const sold = ALL.filter(p => p.status === 'sold');
   const soldCount = sold.reduce((n, p) => n + (p.qty || 1), 0);
   const $ = s => document.querySelector(s);
+  const dm = text => `https://t.me/${ADMIN}?text=${encodeURIComponent(text)}`;
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const money = n => n ? n.toLocaleString('ru-RU').replace(/,/g, ' ') + ' ₴' : 'Цена Договорная';
   const ST = { in: '🔥 В наличии', transit: '✈️ Едет ко мне', order: '📦 Под заказ', sold: 'SOLD' };
@@ -147,8 +148,8 @@
         ${p.desc ? `<p class="desc">${esc(p.desc)}</p>` : ''}
         <div class="acts">
           ${p.status === 'sold'
-            ? `<a class="btn btn-fire full" href="https://t.me/${ADMIN}" target="_blank" rel="noopener">Хочу похожее — привези</a>`
-            : `<a class="btn btn-fire full" href="https://t.me/${ADMIN}" target="_blank" rel="noopener">Купить — написать @${ADMIN}</a>`}
+            ? `<a class="btn btn-fire full" href="${dm('Привет, хочу что-то похожее на ' + p.name)}" target="_blank" rel="noopener">Хочу похожее — привези</a>`
+            : `<a class="btn btn-fire full" href="${dm('Привет, хочу купить ' + p.name)}" target="_blank" rel="noopener">Купить — написать @${ADMIN}</a>`}
           <a class="tglink" href="${p.post}" target="_blank" rel="noopener">Пост в канале ↗</a>
         </div>
       </div>`;
