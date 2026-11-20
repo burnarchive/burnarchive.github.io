@@ -72,6 +72,7 @@
     return `<article class="card reveal" data-id="${p.id}" tabindex="0">
       <div class="ph">
         <span class="badge ${p.status}">${ST[p.status]}</span>
+        ${p.qty > 1 ? `<span class="qty">x${p.qty}</span>` : ''}
         <img src="${p.photos[0] || 'logo.jpg'}" alt="${esc(p.name)}" loading="lazy">${alt}
       </div>
       <div class="meta">

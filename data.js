@@ -1502,7 +1502,7 @@ window.SHOP_DATA = {
   {
    "id": 185,
    "brand": "Undercover",
-   "name": "Undercover x GU Zip High Shoes x40",
+   "name": "Undercover x GU Zip High Shoes",
    "type": "обувь",
    "price": 0,
    "size": "26, 27, 28cm",
