@@ -71,7 +71,7 @@
     const alt = p.photos[1] ? `<img class="alt" src="${p.photos[1]}" alt="" loading="lazy">` : '';
     return `<article class="card reveal" data-id="${p.id}" tabindex="0">
       <div class="ph">
-        <span class="badge ${p.status}">${ST[p.status]}</span>
+        <span class="badge ${p.status}${p.status !== 'sold' ? ' badge-ph' : ''}">${ST[p.status]}</span>
         ${p.qty > 1 ? `<span class="qty" style="position:absolute;top:8px;right:12px;z-index:2;font-family:Unbounded,sans-serif;font-weight:900;font-size:30px;letter-spacing:-.04em;line-height:1;transform:rotate(-12deg);background:linear-gradient(100deg,#b3140c,#ff3d00 30%,#ff7a1a 60%,#ffc93c);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 6px rgba(0,0,0,.8)) drop-shadow(0 0 12px rgba(255,61,0,.6))">x${p.qty}</span>` : ''}
         <img src="${p.photos[0] || 'logo.jpg'}" alt="${esc(p.name)}" loading="lazy">${alt}
       </div>
@@ -80,7 +80,7 @@
         <span class="name">${esc(p.name)}</span>
         <div class="row">
           <span class="price${p.price || p.options || p.status === 'sold' ? '' : ' deal'}">${p.status === 'sold' ? '—' : priceLabel(p)}</span>
-          <span class="size">${esc(p.size)}</span>
+          <span class="tags"><span class="size">${esc(p.size)}</span>${p.status !== 'sold' ? `<span class="st-m ${p.status}">${ST[p.status]}</span>` : ''}</span>
         </div>
       </div>
     </article>`;

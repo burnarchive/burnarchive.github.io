@@ -258,3 +258,10 @@ select:focus{border-color:var(--flame)}
 .card .price.deal{font-size:14px}
 .qty{position:absolute;top:8px;right:12px;z-index:2;font-family:var(--display);font-weight:900;font-size:30px;letter-spacing:-.04em;line-height:1;transform:rotate(-12deg);background:var(--fire);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 6px rgba(0,0,0,.8)) drop-shadow(0 0 12px rgba(255,61,0,.6))}
 @media (hover:none){.card .ph img.alt{display:none}.card:hover .ph img{transform:none}.card:hover{transform:none}}
+.tags{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+.st-m{display:none}
+@media (max-width:520px){
+  .badge-ph{display:none}
+  .st-m{display:inline-block;font-size:9px;font-weight:700;padding:2px 5px;border-radius:6px;background:var(--ash);white-space:nowrap}
+  .st-m.in{color:var(--gold)}.st-m.transit{color:#7fd3ff}.st-m.order{color:#c9a3ff}
+}
