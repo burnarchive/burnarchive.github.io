@@ -148,7 +148,7 @@ window.SHOP_DATA = {
    "price": 2500,
    "size": "M",
    "cond": "9.5/10",
-   "status": "in",
+   "status": "transit",
    "desc": "",
    "photos": [
     "img/392-0.jpg",
@@ -253,7 +253,7 @@ window.SHOP_DATA = {
    "price": 5000,
    "size": "L",
    "cond": "9.5/10",
-   "status": "in",
+   "status": "transit",
    "desc": "",
    "photos": [
     "img/390-0.jpg",
@@ -320,7 +320,7 @@ window.SHOP_DATA = {
    "brand": "Hysteric Glamour",
    "name": "Hysteric Glamour Puffer",
    "type": "куртка",
-   "price": 6500,
+   "price": 8000,
    "size": "M",
    "cond": "9.5/10",
    "status": "in",
@@ -337,10 +337,10 @@ window.SHOP_DATA = {
    "brand": "Tornado Mart",
    "name": "Tornado Mart Red Puffer",
    "type": "куртка",
-   "price": 5500,
+   "price": 4800,
    "size": "L",
    "cond": "9.5/10",
-   "status": "in",
+   "status": "transit",
    "desc": "",
    "photos": [
     "img/394-0.jpg",
@@ -674,25 +674,6 @@ window.SHOP_DATA = {
    ],
    "post": "https://t.me/burnarchive44/488",
    "date": "2026-11-10"
-  },
-  {
-   "id": 185,
-   "brand": "Undercover",
-   "name": "Undercover x GU Zip High Shoes",
-   "type": "обувь",
-   "price": 4500,
-   "size": "26, 27, 28cm",
-   "cond": "New / Unused",
-   "status": "order",
-   "desc": "Legit. Под заказ, чёрные и белые.",
-   "photos": [
-    "img/185-0.jpg",
-    "img/185-1.jpg",
-    "img/185-2.jpg",
-    "img/185-3.jpg"
-   ],
-   "post": "https://t.me/burnarchive44/185",
-   "date": "2026-09-28"
   },
   {
    "id": 335,

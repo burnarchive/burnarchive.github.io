@@ -47,6 +47,7 @@
     const b = e.target.closest('button'); if (!b) return;
     state.type = b.dataset.type; [...$('#chips').children].forEach(x => x.classList.toggle('on', x === b)); render();
   });
+  [...$('#statusChips').children].forEach(b => { if (b.dataset.st && !cnt(b.dataset.st)) b.hidden = true; });
   $('#statusChips').addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
     state.st = b.dataset.st; [...$('#statusChips').children].forEach(x => x.classList.toggle('on', x === b)); render();
