@@ -320,7 +320,7 @@ window.SHOP_DATA = {
    "brand": "Hysteric Glamour",
    "name": "Hysteric Glamour Puffer",
    "type": "куртка",
-   "price": 8000,
+   "price": 9000,
    "size": "M",
    "cond": "9.5/10",
    "status": "in",
