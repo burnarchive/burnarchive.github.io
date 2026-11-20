@@ -389,7 +389,7 @@ window.SHOP_DATA = {
    "price": 7000,
    "size": "L (M fit)",
    "cond": "10, Perfect",
-   "status": "transit",
+   "status": "sold",
    "desc": "",
    "photos": [
     "img/470-0.jpg",
