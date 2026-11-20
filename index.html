@@ -183,7 +183,10 @@
 
 <div class="toast" id="toast" hidden></div>
 
-<script src="data.js"></script>
-<script src="app.js"></script>
+<script>
+  // всегда свежие данные, без кеша браузера
+  var v = Date.now();
+  document.write('<script src="data.js?v=' + v + '"><\/script><script src="app.js?v=' + v + '"><\/script>');
+</script>
 </body>
 </html>
