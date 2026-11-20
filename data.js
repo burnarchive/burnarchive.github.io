@@ -555,7 +555,7 @@ window.SHOP_DATA = {
    "price": 0,
    "size": "27cm",
    "cond": "Like 10",
-   "status": "in",
+   "status": "transit",
    "desc": "Цена — оффер в лс.",
    "photos": [
     "img/581-0.jpg",
@@ -575,7 +575,7 @@ window.SHOP_DATA = {
    "price": 5800,
    "size": "28cm",
    "cond": "—",
-   "status": "in",
+   "status": "transit",
    "desc": "",
    "photos": [
     "img/586-0.jpg",
