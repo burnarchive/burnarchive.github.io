@@ -53,26 +53,6 @@ window.SHOP_DATA = {
    "date": "2026-11-10"
   },
   {
-   "id": 444,
-   "brand": "Number (N)ine",
-   "name": "Number (N)ine Tee 2000s",
-   "type": "футболка",
-   "price": 5800,
-   "size": "M",
-   "cond": "по фото",
-   "status": "in",
-   "desc": "RARE",
-   "photos": [
-    "img/444-0.jpg",
-    "img/444-1.jpg",
-    "img/444-2.jpg",
-    "img/444-3.jpg",
-    "img/444-4.jpg"
-   ],
-   "post": "https://t.me/burnarchive44/444",
-   "date": "2026-11-07"
-  },
-  {
    "id": 466,
    "brand": "Tornado Mart",
    "name": "Tornado Mart Tee (if6was9 / 14th type)",
@@ -389,7 +369,7 @@ window.SHOP_DATA = {
    "brand": "GOA",
    "name": "GOA Puffer (Gore-Tex)",
    "type": "куртка",
-   "price": 5500,
+   "price": 6500,
    "size": "M",
    "cond": "10",
    "status": "in",
