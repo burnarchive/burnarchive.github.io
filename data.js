@@ -286,7 +286,7 @@ window.SHOP_DATA = {
    "brand": "Undercover",
    "name": "Undercover Asymmetric Jacket",
    "type": "куртка",
-   "price": 3800,
+   "price": 3500,
    "size": "S, M, L",
    "cond": "9.5+",
    "status": "in",
