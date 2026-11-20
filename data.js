@@ -1518,6 +1518,24 @@ window.SHOP_DATA = {
    "post": "https://t.me/burnarchive44/185",
    "date": "2026-09-28",
    "qty": 40
+  },
+  {
+   "id": 648,
+   "brand": "No Name",
+   "name": "Vintage Alaska Jacket (Winter)",
+   "type": "куртка",
+   "price": 2500,
+   "size": "M-L",
+   "cond": "Perfect",
+   "status": "in",
+   "desc": "Довольно тёплая, под термуху пойдёт на зиму.",
+   "photos": [
+    "img/648-0.jpg",
+    "img/648-1.jpg",
+    "img/648-2.jpg"
+   ],
+   "post": "https://t.me/burnarchive44/648",
+   "date": "2026-11-20"
   }
  ]
 };
