@@ -95,6 +95,8 @@
     if (state.sort === 'new') list.sort((a, b) => b.id - a.id);
     if (state.sort === 'cheap') list.sort((a, b) => (a.price || 1e9) - (b.price || 1e9));
     if (state.sort === 'exp') list.sort((a, b) => b.price - a.price);
+    const scarf = p => /^Шарф/i.test(p.name);
+    list = list.filter(p => !scarf(p)).concat(list.filter(scarf));
     $('#grid').innerHTML = list.map(card).join('');
     $('#empty').hidden = list.length > 0;
     $('#shopNum').textContent = list.length;
