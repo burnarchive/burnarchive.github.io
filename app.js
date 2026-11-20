@@ -6,7 +6,7 @@
   const sold = ALL.filter(p => p.status === 'sold');
   const $ = s => document.querySelector(s);
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const money = n => n ? n.toLocaleString('ru-RU').replace(/,/g, ' ') + ' ₴' : 'по запросу';
+  const money = n => n ? n.toLocaleString('ru-RU').replace(/,/g, ' ') + ' ₴' : 'Цена Договорная';
   const ST = { in: '🔥 В наличии', transit: '✈️ Едет ко мне', order: '📦 Под заказ', sold: 'SOLD' };
   const TYPES = [
     ['', 'Всё'], ['tops', 'Футболки и рубашки', ['футболка', 'рубашка', 'лонгслив']],
@@ -70,7 +70,7 @@
         <span class="brand">${esc(p.brand)}</span>
         <span class="name">${esc(p.name)}</span>
         <div class="row">
-          <span class="price">${p.status === 'sold' ? '—' : money(p.price)}</span>
+          <span class="price${p.price || p.status === 'sold' ? '' : ' deal'}">${p.status === 'sold' ? '—' : money(p.price)}</span>
           <span class="size">${esc(p.size)}</span>
         </div>
       </div>
@@ -187,7 +187,7 @@
         <div><div class="n">${esc(p.name)}</div><div class="s">${esc(p.size)} · ${ST[p.status]}</div><button data-add="${p.id}">убрать</button></div>
         <div class="p">${money(p.price)}</div>
       </div>`).join('') : `<p class="empty">Корзина пуста.<br>Добавь что-нибудь горячее 🔥</p>`;
-    $('#cartTotal').textContent = money(items.reduce((s, p) => s + (p.price || 0), 0)) .replace('по запросу', '0 ₴');
+    $('#cartTotal').textContent = money(items.reduce((s, p) => s + (p.price || 0), 0)) .replace('Цена Договорная', '0 ₴');
     $('#orderForm').hidden = !items.length;
   }
   $('#cartBtn').addEventListener('click', () => { syncCart(); $('#veil').hidden = false; $('#drawer').hidden = false; document.body.classList.add('lock'); });
@@ -201,7 +201,7 @@
       '',
       ...items.map((p, i) => `${i + 1}. ${p.name} — ${p.size} — ${money(p.price)}\n   ${p.post}`),
       '',
-      `Итого: ${money(total).replace('по запросу', '0 ₴')}${items.some(p => !p.price) ? ' (+ позиции по запросу)' : ''}`,
+      `Итого: ${money(total).replace('Цена Договорная', '0 ₴')}${items.some(p => !p.price) ? ' (+ позиции с договорной ценой)' : ''}`,
       '',
       `Имя: ${$('#fName').value.trim()}`,
       `Telegram: ${$('#fTg').value.trim()}`,

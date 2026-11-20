@@ -248,3 +248,4 @@ select:focus{border-color:var(--flame)}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}
 }
+.card .price.deal{font-size:14px}
