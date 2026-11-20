@@ -148,9 +148,7 @@
         </dl>
         ${p.desc ? `<p class="desc">${esc(p.desc)}</p>` : ''}
         <div class="acts">
-          ${p.status === 'sold'
-            ? `<a class="btn btn-fire full" href="${dm('Привет, хочу что-то похожее на ' + p.name + '\n' + p.post)}" target="_blank" rel="noopener">Хочу похожее — привези</a>`
-            : `<a class="btn btn-fire full" href="${dm('Привет, хочу купить ' + p.name + '\n' + p.post)}" target="_blank" rel="noopener">Купить — написать @${ADMIN}</a>`}
+          ${p.status === 'sold' ? '' : `<a class="btn btn-fire full" href="${dm('Привет, хочу купить ' + p.name + '\n' + p.post)}" target="_blank" rel="noopener">Купить — написать @${ADMIN}</a>`}
           <a class="tglink" href="${p.post}" target="_blank" rel="noopener">Пост в канале ↗</a>
         </div>
       </div>`;
