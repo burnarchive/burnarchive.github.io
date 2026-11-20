@@ -4,6 +4,7 @@
   const ALL = DATA.products;
   const live = ALL.filter(p => p.status !== 'sold');
   const sold = ALL.filter(p => p.status === 'sold');
+  const soldCount = sold.reduce((n, p) => n + (p.qty || 1), 0);
   const $ = s => document.querySelector(s);
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const money = n => n ? n.toLocaleString('ru-RU').replace(/,/g, ' ') + ' ₴' : 'Цена Договорная';
@@ -39,7 +40,7 @@
     const step = t => { const k = Math.min(1, (t - t0) / d); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); };
     setTimeout(() => requestAnimationFrame(step), 1500);
   };
-  countUp($('#stIn'), cnt('in')); countUp($('#stTr'), cnt('transit')); countUp($('#stSold'), sold.length);
+  countUp($('#stIn'), cnt('in')); countUp($('#stTr'), cnt('transit')); countUp($('#stSold'), soldCount);
 
   const brands = [...new Set(ALL.map(p => p.brand))].filter(b => !['No Name', 'Vintage', 'Japan Brand'].includes(b));
   const mq = brands.map(b => `<span>${esc(b)}</span><i>✦</i>`).join('');
@@ -103,7 +104,7 @@
     observe();
   }
   $('#soldGrid').innerHTML = sold.slice().sort((a, b) => b.id - a.id).map(card).join('');
-  $('#soldNum').textContent = sold.length;
+  $('#soldNum').textContent = soldCount;
 
   const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }

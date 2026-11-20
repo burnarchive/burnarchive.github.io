@@ -1498,6 +1498,26 @@ window.SHOP_DATA = {
    ],
    "post": "https://t.me/burnarchive44/591",
    "date": "2026-11-14"
+  },
+  {
+   "id": 185,
+   "brand": "Undercover",
+   "name": "Undercover x GU Zip High Shoes x40",
+   "type": "обувь",
+   "price": 0,
+   "size": "26, 27, 28cm",
+   "cond": "New / Unused",
+   "status": "sold",
+   "desc": "Продано 40 пар.",
+   "photos": [
+    "img/185-0.jpg",
+    "img/185-1.jpg",
+    "img/185-2.jpg",
+    "img/185-3.jpg"
+   ],
+   "post": "https://t.me/burnarchive44/185",
+   "date": "2026-09-28",
+   "qty": 40
   }
  ]
 };
