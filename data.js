@@ -697,13 +697,30 @@ window.SHOP_DATA = {
   {
    "id": 335,
    "brand": "Number (N)ine",
-   "name": "Number (N)ine Chain Tags",
+   "name": "Number (N)ine Chain Tag — Apple",
    "type": "аксессуары",
    "price": 1400,
    "size": "One size",
-   "cond": "Яблоко идеал, на сердце царапина",
+   "cond": "Идеал",
    "status": "in",
-   "desc": "Heart — 2400₴, Apple — 1400₴.",
+   "desc": "Подвеска-яблоко. Heart тоже в наличии — 2500₴.",
+   "photos": [
+    "img/335-0.jpg",
+    "img/335-1.jpg"
+   ],
+   "post": "https://t.me/burnarchive44/335",
+   "date": "2026-10-20"
+  },
+  {
+   "id": 335.5,
+   "brand": "Number (N)ine",
+   "name": "Number (N)ine Chain Tag — Heart",
+   "type": "аксессуары",
+   "price": 2500,
+   "size": "One size",
+   "cond": "Есть царапина",
+   "status": "in",
+   "desc": "Подвеска-сердце. Apple тоже в наличии — 1400₴.",
    "photos": [
     "img/335-0.jpg",
     "img/335-1.jpg"
