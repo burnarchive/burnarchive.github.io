@@ -112,7 +112,7 @@ window.SHOP_DATA = {
    "price": 4200,
    "size": "3 (M-L fit)",
    "cond": "Like 10",
-   "status": "in",
+   "status": "transit",
    "desc": "",
    "photos": [
     "img/465-0.jpg"
@@ -354,7 +354,7 @@ window.SHOP_DATA = {
    "price": 6500,
    "size": "M",
    "cond": "Like 10",
-   "status": "in",
+   "status": "transit",
    "desc": "",
    "photos": [
     "img/576-0.jpg",
@@ -372,7 +372,7 @@ window.SHOP_DATA = {
    "price": 6500,
    "size": "M",
    "cond": "10",
-   "status": "in",
+   "status": "transit",
    "desc": "",
    "photos": [
     "img/468-0.jpg",
@@ -389,7 +389,7 @@ window.SHOP_DATA = {
    "price": 7000,
    "size": "L (M fit)",
    "cond": "10, Perfect",
-   "status": "in",
+   "status": "transit",
    "desc": "",
    "photos": [
     "img/470-0.jpg",
