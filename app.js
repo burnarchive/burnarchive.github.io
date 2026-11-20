@@ -16,6 +16,16 @@
   const state = { q: '', brand: '', type: '', st: '', sort: 'new' };
   const priceLabel = p => p.options ? 'от ' + money(Math.min(...p.options.map(o => o.price))) : money(p.price);
 
+  /* ---------- якоря без #хвоста в адресе ---------- */
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]'); if (!a) return;
+    e.preventDefault();
+    const id = a.getAttribute('href').slice(1);
+    const el = id ? document.getElementById(id) : null;
+    el ? el.scrollIntoView({ behavior: 'smooth' }) : scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+
   /* ---------- шапка, статы, бегущая строка ---------- */
   const top = $('#top');
   const onScroll = () => top.classList.toggle('solid', scrollY > 30);
