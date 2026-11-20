@@ -1527,7 +1527,7 @@ window.SHOP_DATA = {
    "price": 2500,
    "size": "M-L",
    "cond": "Perfect",
-   "status": "in",
+   "status": "sold",
    "desc": "Довольно тёплая, под термуху пойдёт на зиму.",
    "photos": [
     "img/648-0.jpg",
