@@ -10,7 +10,7 @@ window.SHOP_DATA = {
    "size": "M",
    "cond": "Perfect",
    "status": "transit",
-   "desc": "",
+   "desc": "Замеры: ширина груди 48 см, ширина плеч 43 см, длина 64 см.",
    "photos": [
     "img/658-0.jpg",
     "img/658-1.jpg",
