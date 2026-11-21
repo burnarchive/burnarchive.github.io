@@ -234,7 +234,7 @@ window.SHOP_DATA = {
    "price": 4200,
    "size": "M",
    "cond": "New / 10",
-   "status": "in",
+   "status": "sold",
    "desc": "Замеры в лс.",
    "photos": [
     "img/345-0.jpg",
@@ -617,7 +617,8 @@ window.SHOP_DATA = {
     "img/337-1.jpg"
    ],
    "post": "https://t.me/burnarchive44/337",
-   "date": "2026-10-20"
+   "date": "2026-10-20",
+   "sid": 487.5
   },
   {
    "id": 482,

@@ -84,7 +84,7 @@
       (!ts || ts.includes(p.type)) &&
       (!state.st || p.status === state.st) &&
       (!state.q || `${p.brand} ${p.name} ${p.type} ${p.size}`.toLowerCase().includes(state.q)));
-    if (state.sort === 'new') list.sort((a, b) => b.id - a.id);
+    if (state.sort === 'new') list.sort((a, b) => (b.sid || b.id) - (a.sid || a.id));
     if (state.sort === 'cheap') list.sort((a, b) => (a.price || 1e9) - (b.price || 1e9));
     if (state.sort === 'exp') list.sort((a, b) => b.price - a.price);
     const scarf = p => /^Шарф/i.test(p.name);
