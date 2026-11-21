@@ -2,6 +2,23 @@ window.SHOP_DATA = {
  "updated": "2026-11-19",
  "products": [
   {
+   "id": 663,
+   "brand": "Kris Van Assche",
+   "name": "Kris Van Assche Shoes",
+   "type": "обувь",
+   "price": 0,
+   "size": "44 (28.5cm)",
+   "cond": "Сейчас дал бы 9, они просто грязные — как приедут, вымою до блеска",
+   "status": "transit",
+   "desc": "",
+   "photos": [
+    "img/663-0.jpg",
+    "img/663-1.jpg"
+   ],
+   "post": "https://t.me/burnarchive44/663",
+   "date": "2026-11-21"
+  },
+  {
    "id": 658,
    "brand": "GOA",
    "name": "GOA Alaska Puffer",
