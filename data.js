@@ -2,6 +2,24 @@ window.SHOP_DATA = {
  "updated": "2026-11-19",
  "products": [
   {
+   "id": 658,
+   "brand": "GOA",
+   "name": "GOA Alaska Puffer",
+   "type": "куртка",
+   "price": 6500,
+   "size": "M",
+   "cond": "Perfect",
+   "status": "transit",
+   "desc": "",
+   "photos": [
+    "img/658-0.jpg",
+    "img/658-1.jpg",
+    "img/658-2.jpg"
+   ],
+   "post": "https://t.me/burnarchive44/658",
+   "date": "2026-11-21"
+  },
+  {
    "id": 400,
    "brand": "Hysteric Glamour",
    "name": "Hysteric Glamour Tee \"Thee Hysteric XXX\"",
