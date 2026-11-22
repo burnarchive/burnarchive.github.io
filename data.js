@@ -2,6 +2,40 @@ window.SHOP_DATA = {
  "updated": "2026-11-19",
  "products": [
   {
+   "id": 668,
+   "brand": "No Name",
+   "name": "Alaska Puffer",
+   "type": "куртка",
+   "price": 2350,
+   "size": "S-M",
+   "cond": "9.5",
+   "status": "in",
+   "desc": "Замеры: длина 65 см, ширина 48 см, рукав 64 см, плечи 41 см.",
+   "photos": [
+    "img/668-0.jpg",
+    "img/668-1.jpg"
+   ],
+   "post": "https://t.me/burnarchive44/668",
+   "date": "2026-11-22"
+  },
+  {
+   "id": 666,
+   "brand": "No Name",
+   "name": "Half Coat",
+   "type": "куртка",
+   "price": 2000,
+   "size": "M",
+   "cond": "10",
+   "status": "in",
+   "desc": "Замеры: длина 71 см, ширина 50 см, рукав 64 см, плечи 47 см.",
+   "photos": [
+    "img/666-0.jpg",
+    "img/666-1.jpg"
+   ],
+   "post": "https://t.me/burnarchive44/666",
+   "date": "2026-11-22"
+  },
+  {
    "id": 663,
    "brand": "Kris Van Assche",
    "name": "Kris Van Assche Shoes",
