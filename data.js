@@ -443,7 +443,7 @@ window.SHOP_DATA = {
    "price": 2000,
    "size": "M",
    "cond": "Like 10",
-   "status": "in",
+   "status": "sold",
    "desc": "",
    "photos": [
     "img/597-0.jpg",
