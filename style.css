@@ -265,3 +265,4 @@ select:focus{border-color:var(--flame)}
   .st-m{display:inline-block;font-size:11px;font-weight:700;padding:3px 7px;border-radius:6px;background:var(--ash);white-space:nowrap}
   .st-m.in{color:var(--gold)}.st-m.transit{color:#7fd3ff}.st-m.order{color:#c9a3ff}
 }
+.price .eur{display:block;font-family:"Inter Tight",sans-serif;font-size:.6em;font-weight:600;letter-spacing:0;color:var(--gold);opacity:.85;margin-top:2px}

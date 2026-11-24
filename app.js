@@ -17,7 +17,11 @@
     ['outer', 'Куртки', ['куртка']], ['shoes', 'Обувь', ['обувь']], ['acc', 'Аксессуары', ['аксессуары']]
   ];
   const state = { q: '', brand: '', type: '', st: '', sort: 'new' };
-  const priceLabel = p => p.options ? 'от ' + money(Math.min(...p.options.map(o => o.price))) : money(p.price);
+  const EUR = 49.61; // курс НБУ, грн за 1 €
+  const priceLabel = p => {
+    const n = p.options ? Math.min(...p.options.map(o => o.price)) : p.price, pre = p.options ? 'от ' : '';
+    return pre + money(n) + (n ? `<small class="eur">${pre}€${Math.ceil(n / EUR)}</small>` : '');
+  };
 
   /* ---------- якоря без #хвоста в адресе ---------- */
   document.addEventListener('click', e => {
