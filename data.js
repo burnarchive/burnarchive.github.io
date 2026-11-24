@@ -16,7 +16,8 @@ window.SHOP_DATA = {
     "img/668-1.jpg"
    ],
    "post": "https://t.me/burnarchive44/668",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "desc_en": "Measurements: length 65 cm, width 48 cm, sleeve 64 cm, shoulders 41 cm."
   },
   {
    "id": 666,
@@ -33,7 +34,8 @@ window.SHOP_DATA = {
     "img/666-1.jpg"
    ],
    "post": "https://t.me/burnarchive44/666",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "desc_en": "Measurements: length 71 cm, width 50 cm, sleeve 64 cm, shoulders 47 cm."
   },
   {
    "id": 663,
@@ -50,7 +52,8 @@ window.SHOP_DATA = {
     "img/663-1.jpg"
    ],
    "post": "https://t.me/burnarchive44/663",
-   "date": "2026-11-21"
+   "date": "2026-11-21",
+   "cond_en": "I’d give 9 right now, they’re just dirty — will clean them to shine when they arrive"
   },
   {
    "id": 658,
@@ -68,7 +71,8 @@ window.SHOP_DATA = {
     "img/658-2.jpg"
    ],
    "post": "https://t.me/burnarchive44/658",
-   "date": "2026-11-21"
+   "date": "2026-11-21",
+   "desc_en": "Measurements: chest width 48 cm, shoulder width 43 cm, length 64 cm."
   },
   {
    "id": 400,
@@ -102,7 +106,8 @@ window.SHOP_DATA = {
     "img/604-1.jpg"
    ],
    "post": "https://t.me/burnarchive44/604",
-   "date": "2026-11-14"
+   "date": "2026-11-14",
+   "desc_en": "Factory print cracks."
   },
   {
    "id": 528,
@@ -136,7 +141,8 @@ window.SHOP_DATA = {
     "img/466-1.jpg"
    ],
    "post": "https://t.me/burnarchive44/466",
-   "date": "2026-11-10"
+   "date": "2026-11-10",
+   "desc_en": "Looks vintage — not a minus in my opinion."
   },
   {
    "id": 579,
@@ -275,7 +281,8 @@ window.SHOP_DATA = {
     "img/289-4.jpg"
    ],
    "post": "https://t.me/burnarchive44/289",
-   "date": "2026-10-13"
+   "date": "2026-10-13",
+   "desc_en": "Measurements in DM."
   },
   {
    "id": 345,
@@ -292,7 +299,8 @@ window.SHOP_DATA = {
     "img/345-1.jpg"
    ],
    "post": "https://t.me/burnarchive44/345",
-   "date": "2026-10-20"
+   "date": "2026-10-20",
+   "desc_en": "Measurements in DM."
   },
   {
    "id": 390,
@@ -345,7 +353,8 @@ window.SHOP_DATA = {
     "img/134-1.jpg"
    ],
    "post": "https://t.me/burnarchive44/134",
-   "date": "2026-09-16"
+   "date": "2026-09-16",
+   "desc_en": "Great item for autumn and winter, great fit."
   },
   {
    "id": 333,
@@ -362,7 +371,8 @@ window.SHOP_DATA = {
     "img/333-1.jpg"
    ],
    "post": "https://t.me/burnarchive44/333",
-   "date": "2026-10-20"
+   "date": "2026-10-20",
+   "desc_en": "Measurements in DM."
   },
   {
    "id": 685,
@@ -381,7 +391,8 @@ window.SHOP_DATA = {
    ],
    "post": "https://t.me/burnarchive44/685",
    "date": "2026-11-24",
-   "sid": 999999
+   "sid": 999999,
+   "desc_en": "Measurements: length 65 cm, width 50 cm, shoulders 41 cm, sleeve 62 cm."
   },
   {
    "id": 394,
@@ -415,7 +426,8 @@ window.SHOP_DATA = {
     "img/534-1.jpg"
    ],
    "post": "https://t.me/burnarchive44/534",
-   "date": "2026-11-10"
+   "date": "2026-11-10",
+   "desc_en": "90s vibe item."
   },
   {
    "id": 576,
@@ -560,7 +572,8 @@ window.SHOP_DATA = {
     "img/299-2.jpg"
    ],
    "post": "https://t.me/burnarchive44/299",
-   "date": "2026-10-13"
+   "date": "2026-10-13",
+   "desc_en": "Open to offers."
   },
   {
    "id": 102,
@@ -581,7 +594,8 @@ window.SHOP_DATA = {
     "img/102-5.jpg"
    ],
    "post": "https://t.me/burnarchive44/102",
-   "date": "2026-09-04"
+   "date": "2026-09-04",
+   "desc_en": "Legit. Fits 27–28 cm feet. Price negotiable."
   },
   {
    "id": 521,
@@ -636,7 +650,8 @@ window.SHOP_DATA = {
     "img/581-4.jpg"
    ],
    "post": "https://t.me/burnarchive44/581",
-   "date": "2026-11-14"
+   "date": "2026-11-14",
+   "desc_en": "Price — make an offer in DM."
   },
   {
    "id": 586,
@@ -752,7 +767,9 @@ window.SHOP_DATA = {
      "label": "Heart",
      "price": 2500
     }
-   ]
+   ],
+   "cond_en": "Apple — perfect, Heart has a scratch",
+   "desc_en": "One lot, two pendants — pick one: Apple — €29, Heart — €51."
   },
   {
    "id": 402,
@@ -789,7 +806,8 @@ window.SHOP_DATA = {
     "img/477-4.jpg"
    ],
    "post": "https://t.me/burnarchive44/477",
-   "date": "2026-11-10"
+   "date": "2026-11-10",
+   "cond_en": "see photos"
   },
   {
    "id": 640,
@@ -823,7 +841,9 @@ window.SHOP_DATA = {
     "img/507-2.jpg"
    ],
    "post": "https://t.me/burnarchive44/507",
-   "date": "2026-11-10"
+   "date": "2026-11-10",
+   "name_en": "Ushanka Hat #1",
+   "desc_en": "With any clothing purchase — 400₴ (€9)."
   },
   {
    "id": 510,
@@ -841,7 +861,9 @@ window.SHOP_DATA = {
     "img/510-2.jpg"
    ],
    "post": "https://t.me/burnarchive44/510",
-   "date": "2026-11-10"
+   "date": "2026-11-10",
+   "name_en": "Ushanka Hat #2",
+   "desc_en": "With any clothing purchase — 400₴ (€9)."
   },
   {
    "id": 513,
@@ -859,7 +881,9 @@ window.SHOP_DATA = {
     "img/513-2.jpg"
    ],
    "post": "https://t.me/burnarchive44/513",
-   "date": "2026-11-10"
+   "date": "2026-11-10",
+   "name_en": "Sailor Cap #1 (like Kai Angel)",
+   "desc_en": "With any clothing purchase — 400₴ (€9)."
   },
   {
    "id": 341,
@@ -878,7 +902,8 @@ window.SHOP_DATA = {
     "img/341-3.jpg"
    ],
    "post": "https://t.me/burnarchive44/341",
-   "date": "2026-10-20"
+   "date": "2026-10-20",
+   "name_en": "Sailor’s Cap #2 (like Kai Angel)"
   },
   {
    "id": 494,
@@ -896,7 +921,9 @@ window.SHOP_DATA = {
     "img/494-2.jpg"
    ],
    "post": "https://t.me/burnarchive44/494",
-   "date": "2026-11-10"
+   "date": "2026-11-10",
+   "name_en": "Grey Scarf",
+   "desc_en": "With any clothing purchase — 650₴ (€14)."
   },
   {
    "id": 497,
@@ -914,7 +941,9 @@ window.SHOP_DATA = {
     "img/497-2.jpg"
    ],
    "post": "https://t.me/burnarchive44/497",
-   "date": "2026-11-10"
+   "date": "2026-11-10",
+   "name_en": "Beige Scarf #1",
+   "desc_en": "With any clothing purchase — 650₴ (€14)."
   },
   {
    "id": 500,
@@ -933,7 +962,9 @@ window.SHOP_DATA = {
     "img/500-3.jpg"
    ],
    "post": "https://t.me/burnarchive44/500",
-   "date": "2026-11-10"
+   "date": "2026-11-10",
+   "name_en": "Beige Scarf #2",
+   "desc_en": "With any clothing purchase — 650₴ (€14)."
   },
   {
    "id": 504,
@@ -951,7 +982,9 @@ window.SHOP_DATA = {
     "img/504-2.jpg"
    ],
    "post": "https://t.me/burnarchive44/504",
-   "date": "2026-11-10"
+   "date": "2026-11-10",
+   "name_en": "Brown-Beige Scarf",
+   "desc_en": "With any clothing purchase — 650₴ (€14)."
   },
   {
    "id": 545,
@@ -969,7 +1002,9 @@ window.SHOP_DATA = {
     "img/545-2.jpg"
    ],
    "post": "https://t.me/burnarchive44/545",
-   "date": "2026-11-10"
+   "date": "2026-11-10",
+   "name_en": "Green Scarf",
+   "desc_en": "With any clothing purchase — 650₴ (€14)."
   },
   {
    "id": 588,
@@ -987,7 +1022,9 @@ window.SHOP_DATA = {
     "img/588-2.jpg"
    ],
    "post": "https://t.me/burnarchive44/588",
-   "date": "2026-11-14"
+   "date": "2026-11-14",
+   "name_en": "Black Scarf",
+   "desc_en": "With any clothing purchase — 650₴ (€14)."
   },
   {
    "id": 16,
@@ -1589,7 +1626,8 @@ window.SHOP_DATA = {
    ],
    "post": "https://t.me/burnarchive44/185",
    "date": "2026-09-28",
-   "qty": 40
+   "qty": 40,
+   "desc_en": "40 pairs sold."
   },
   {
    "id": 648,
@@ -1607,7 +1645,8 @@ window.SHOP_DATA = {
     "img/648-2.jpg"
    ],
    "post": "https://t.me/burnarchive44/648",
-   "date": "2026-11-20"
+   "date": "2026-11-20",
+   "desc_en": "Quite warm — with thermal underwear it works for winter."
   }
  ]
 };

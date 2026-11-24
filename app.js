@@ -1,5 +1,10 @@
 (() => {
   const ADMIN = 'burnadmin';
+  let LANG = 'ru';
+  try { LANG = localStorage.getItem('burn_lang') === 'en' ? 'en' : 'ru'; } catch (e) {}
+  const EN = LANG === 'en';
+  const L = (ru, en) => EN ? en : ru;
+  const tr = (p, f) => (EN && p[f + '_en']) || p[f];
   const DATA = window.SHOP_DATA || { products: [] };
   const ALL = DATA.products;
   const live = ALL.filter(p => p.status !== 'sold');
@@ -9,19 +14,37 @@
   const th = s => /^img\/[^/]+\.jpg$/.test(s) ? s.replace(/^img\/(.+)\.jpg$/, 'img/t/$1.webp') : s;
   const dm = text => `https://t.me/${ADMIN}?text=${encodeURIComponent(text)}`;
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const money = n => n ? n.toLocaleString('ru-RU').replace(/,/g, ' ') + ' ₴' : 'Цена Договорная';
-  const ST = { in: '🔥 В наличии', transit: '✈️ Едет ко мне', order: '📦 Под заказ', sold: 'SOLD' };
+  const money = n => n ? n.toLocaleString('ru-RU').replace(/,/g, ' ') + ' ₴' : L('Цена Договорная', 'Price on request');
+  const ST = EN ? { in: '🔥 In stock', transit: '✈️ On the way', order: '📦 To order', sold: 'SOLD' }
+               : { in: '🔥 В наличии', transit: '✈️ Едет ко мне', order: '📦 Под заказ', sold: 'SOLD' };
+  const TYPE_EN = { 'футболка': 'T-shirt', 'рубашка': 'shirt', 'лонгслив': 'longsleeve', 'худи': 'hoodie', 'свитшот': 'sweatshirt',
+    'джинсы': 'jeans', 'куртка': 'jacket', 'обувь': 'shoes', 'аксессуары': 'accessories' };
   const TYPES = [
-    ['', 'Всё'], ['tops', 'Футболки и рубашки', ['футболка', 'рубашка', 'лонгслив']],
-    ['sweat', 'Худи и свитшоты', ['худи', 'свитшот']], ['jeans', 'Джинсы', ['джинсы']],
-    ['outer', 'Куртки', ['куртка']], ['shoes', 'Обувь', ['обувь']], ['acc', 'Аксессуары', ['аксессуары']]
+    ['', L('Всё', 'All')], ['tops', L('Футболки и рубашки', 'Tees & shirts'), ['футболка', 'рубашка', 'лонгслив']],
+    ['sweat', L('Худи и свитшоты', 'Hoodies & sweats'), ['худи', 'свитшот']], ['jeans', L('Джинсы', 'Jeans'), ['джинсы']],
+    ['outer', L('Куртки', 'Jackets'), ['куртка']], ['shoes', L('Обувь', 'Shoes'), ['обувь']], ['acc', L('Аксессуары', 'Accessories'), ['аксессуары']]
   ];
   const state = { q: '', brand: '', type: '', st: '', sort: 'new' };
   const EUR = 49.61; // курс НБУ, грн за 1 €
   const priceLabel = p => {
-    const n = p.options ? Math.min(...p.options.map(o => o.price)) : p.price, pre = p.options ? 'от ' : '';
+    const n = p.options ? Math.min(...p.options.map(o => o.price)) : p.price, pre = p.options ? L('от ', 'from ') : '';
     return pre + money(n) + (n ? `<small class="eur">${pre}€${Math.ceil(n / EUR)}</small>` : '');
   };
+
+  /* ---------- язык ---------- */
+  if (EN) {
+    document.documentElement.lang = 'en';
+    document.querySelectorAll('[data-en]').forEach(el => { el.innerHTML = el.dataset.en; });
+    document.querySelectorAll('[data-en-ph]').forEach(el => { el.placeholder = el.dataset.enPh; });
+  }
+  document.querySelectorAll('[data-lang]').forEach(b => {
+    b.classList.toggle('on', b.dataset.lang === LANG);
+    b.addEventListener('click', () => {
+      if (b.dataset.lang === LANG) return;
+      try { localStorage.setItem('burn_lang', b.dataset.lang); } catch (e) {}
+      location.reload();
+    });
+  });
 
   /* ---------- якоря без #хвоста в адресе ---------- */
   document.addEventListener('click', e => {
@@ -39,7 +62,7 @@
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
   const cnt = s => live.filter(p => p.status === s).length;
-  $('#upd').textContent = new Date(DATA.updated).toLocaleDateString('ru-RU');
+  $('#upd').textContent = new Date(DATA.updated).toLocaleDateString(L('ru-RU', 'en-GB'));
 
   /* ---------- фильтры ---------- */
   const brandSel = $('#brand');
@@ -68,11 +91,11 @@
       <div class="ph">
         <span class="badge ${p.status}${p.status !== 'sold' ? ' badge-ph' : ''}">${ST[p.status]}</span>
         ${p.qty > 1 ? `<span class="qty" style="position:absolute;top:8px;right:12px;z-index:2;font-family:Unbounded,sans-serif;font-weight:900;font-size:30px;letter-spacing:-.04em;line-height:1;transform:rotate(-12deg);background:linear-gradient(100deg,#b3140c,#ff3d00 30%,#ff7a1a 60%,#ffc93c);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 6px rgba(0,0,0,.8)) drop-shadow(0 0 12px rgba(255,61,0,.6))">x${p.qty}</span>` : ''}
-        <img src="${th(p.photos[0] || 'logo.jpg')}" data-full="${p.photos[0] || 'logo.jpg'}" onerror="this.onerror=null;this.src=this.dataset.full" alt="${esc(p.name)}" loading="lazy">${alt}
+        <img src="${th(p.photos[0] || 'logo.jpg')}" data-full="${p.photos[0] || 'logo.jpg'}" onerror="this.onerror=null;this.src=this.dataset.full" alt="${esc(tr(p, 'name'))}" loading="lazy">${alt}
       </div>
       <div class="meta">
         <span class="brand">${esc(p.brand)}</span>
-        <span class="name">${esc(p.name)}</span>
+        <span class="name">${esc(tr(p, 'name'))}</span>
         <div class="row">
           <span class="price${p.price || p.options || p.status === 'sold' ? '' : ' deal'}">${p.status === 'sold' ? '—' : priceLabel(p)}</span>
           <span class="tags"><span class="size">${esc(p.size)}</span>${p.status !== 'sold' ? `<span class="st-m ${p.status}">${ST[p.status]}</span>` : ''}</span>
@@ -87,7 +110,7 @@
       (!state.brand || p.brand === state.brand) &&
       (!ts || ts.includes(p.type)) &&
       (!state.st || p.status === state.st) &&
-      (!state.q || `${p.brand} ${p.name} ${p.type} ${p.size}`.toLowerCase().includes(state.q)));
+      (!state.q || `${p.brand} ${p.name} ${p.name_en || ''} ${p.type} ${TYPE_EN[p.type] || ''} ${p.size}`.toLowerCase().includes(state.q)));
     if (state.sort === 'new') list.sort((a, b) => (b.sid || b.id) - (a.sid || a.id));
     if (state.sort === 'cheap') list.sort((a, b) => (a.price || 1e9) - (b.price || 1e9));
     if (state.sort === 'exp') list.sort((a, b) => b.price - a.price);
@@ -125,24 +148,24 @@
     const many = p.photos.length > 1;
     $('#modalBody').innerHTML = `
       <div class="gallery">
-        <img class="main" id="gMain" src="${p.photos[0] || 'logo.jpg'}" alt="${esc(p.name)}">
-        ${many ? `<button class="gnav prev" data-g="-1" aria-label="Назад">‹</button><button class="gnav next" data-g="1" aria-label="Вперёд">›</button>
+        <img class="main" id="gMain" src="${p.photos[0] || 'logo.jpg'}" alt="${esc(tr(p, 'name'))}">
+        ${many ? `<button class="gnav prev" data-g="-1" aria-label="${L('Назад', 'Back')}">‹</button><button class="gnav next" data-g="1" aria-label="${L('Вперёд', 'Next')}">›</button>
         <div class="thumbs">${p.photos.map((s, i) => `<img src="${th(s)}" data-full="${s}" onerror="this.onerror=null;this.src=this.dataset.full" data-i="${i}" class="${i ? '' : 'on'}" alt="">`).join('')}</div>` : ''}
       </div>
       <div class="details">
         <span class="badge ${p.status}" style="position:static;align-self:flex-start">${ST[p.status]}</span>
         <span class="brand">${esc(p.brand)}</span>
-        <h3>${esc(p.name)}</h3>
-        <div class="price">${p.status === 'sold' ? 'Продано' : priceLabel(p)}</div>
+        <h3>${esc(tr(p, 'name'))}</h3>
+        <div class="price">${p.status === 'sold' ? L('Продано', 'Sold') : priceLabel(p)}</div>
         <dl class="specs">
-          <dt>Размер</dt><dd>${esc(p.size)}</dd>
-          ${p.cond ? `<dt>Состояние</dt><dd>${esc(p.cond)}</dd>` : ''}
-          <dt>Категория</dt><dd>${esc(p.type)}</dd>
+          <dt>${L('Размер', 'Size')}</dt><dd>${esc(p.size)}</dd>
+          ${p.cond ? `<dt>${L('Состояние', 'Condition')}</dt><dd>${esc(tr(p, 'cond'))}</dd>` : ''}
+          <dt>${L('Категория', 'Category')}</dt><dd>${esc(EN ? TYPE_EN[p.type] || p.type : p.type)}</dd>
         </dl>
-        ${p.desc ? `<p class="desc">${esc(p.desc)}</p>` : ''}
+        ${p.desc ? `<p class="desc">${esc(tr(p, 'desc'))}</p>` : ''}
         <div class="acts">
-          ${p.status === 'sold' ? '' : `<a class="btn btn-fire full" href="${dm('Привет, хочу купить ' + p.name + '\n' + p.post)}" target="_blank" rel="noopener">Купить — написать @${ADMIN}</a>`}
-          <a class="tglink" href="${p.post}" target="_blank" rel="noopener">Пост в канале ↗</a>
+          ${p.status === 'sold' ? '' : `<a class="btn btn-fire full" href="${dm(L('Привет, хочу купить ', 'Hi, I want to buy ') + tr(p, 'name') + '\n' + p.post)}" target="_blank" rel="noopener">${L('Купить — написать', 'Buy — message')} @${ADMIN}</a>`}
+          <a class="tglink" href="${p.post}" target="_blank" rel="noopener">${L('Пост в канале', 'Channel post')} ↗</a>
         </div>
       </div>`;
     $('#veil').hidden = false; $('#modal').hidden = false; document.body.classList.add('lock');

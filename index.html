@@ -29,49 +29,50 @@
   <div class="wrap">
     <a class="logo" href="#"><img src="logo.jpg" alt=""><span>burn<b>archive</b></span></a>
     <nav class="nav">
-      <a href="#shop">Наличие</a>
-      <a href="#sold">Архив</a>
-      <a href="#info">Инфо</a>
+      <a href="#shop" data-en="In stock">Наличие</a>
+      <a href="#sold" data-en="Archive">Архив</a>
+      <a href="#info" data-en="Info">Инфо</a>
     </nav>
+    <div class="lang" role="group" aria-label="Language"><button data-lang="ru">RU</button><button data-lang="en">EN</button></div>
   </div>
 </header>
 
 <section id="shop" class="shop">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Наличие <sup id="shopNum">0</sup></h2>
-      <p>Нажми на вещь — фото, замеры и состояние.</p>
+      <h2><span data-en="In stock">Наличие</span> <sup id="shopNum">0</sup></h2>
+      <p data-en="Tap an item — photos, measurements and condition.">Нажми на вещь — фото, замеры и состояние.</p>
     </div>
 
     <div class="toolbar">
       <div class="search">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <input id="q" type="search" placeholder="Поиск: бренд, вещь, размер…" autocomplete="off">
+        <input id="q" type="search" placeholder="Поиск: бренд, вещь, размер…" data-en-ph="Search: brand, item, size…" autocomplete="off">
       </div>
-      <select id="brand" aria-label="Бренд"><option value="">Все бренды</option></select>
+      <select id="brand" aria-label="Бренд"><option value="" data-en="All brands">Все бренды</option></select>
       <select id="sort" aria-label="Сортировка">
-        <option value="new">Сначала новые</option>
-        <option value="cheap">Дешевле</option>
-        <option value="exp">Дороже</option>
+        <option value="new" data-en="Newest first">Сначала новые</option>
+        <option value="cheap" data-en="Price: low to high">Дешевле</option>
+        <option value="exp" data-en="Price: high to low">Дороже</option>
       </select>
     </div>
     <div class="chips" id="chips"></div>
     <div class="chips chips-status" id="statusChips">
-      <button data-st="" class="on">Все</button>
-      <button data-st="in">🔥 В наличии</button>
-      <button data-st="transit">✈️ Едет ко мне</button>
+      <button data-st="" class="on" data-en="All">Все</button>
+      <button data-st="in" data-en="🔥 In stock">🔥 В наличии</button>
+      <button data-st="transit" data-en="✈️ On the way">✈️ Едет ко мне</button>
     </div>
 
     <div class="grid" id="grid"></div>
-    <p class="empty" id="empty" hidden>Ничего не нашлось. Напиши <a href="https://t.me/burnadmin" target="_blank" rel="noopener">@burnadmin</a>.</p>
+    <p class="empty" id="empty" hidden data-en="Nothing found. Message &lt;a href=&quot;https://t.me/burnadmin&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@burnadmin&lt;/a&gt;.">Ничего не нашлось. Напиши <a href="https://t.me/burnadmin" target="_blank" rel="noopener">@burnadmin</a>.</p>
   </div>
 </section>
 
 <section id="sold" class="sold">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Продано <sup id="soldNum">0</sup></h2>
-      <p>Уже уехало к новым владельцам.</p>
+      <h2><span data-en="Sold">Продано</span> <sup id="soldNum">0</sup></h2>
+      <p data-en="Already gone to new owners.">Уже уехало к новым владельцам.</p>
     </div>
     <div class="grid grid-sold" id="soldGrid"></div>
   </div>
@@ -81,22 +82,22 @@
   <div class="wrap info-grid">
     <div class="card-info">
       <span class="ic">🌍</span>
-      <h3>Доставка</h3>
-      <p>Отправляю заказы по всему миру. По Украине — Новая Почта.</p>
+      <h3 data-en="Shipping">Доставка</h3>
+      <p data-en="Worldwide shipping. Within Ukraine — Nova Poshta.">Отправляю заказы по всему миру. По Украине — Новая Почта.</p>
     </div>
     <div class="card-info">
       <span class="ic">💸</span>
-      <h3>Оплата</h3>
-      <p>Предоплата 300 грн или полная оплата. Детали — в ЛС.</p>
+      <h3 data-en="Payment">Оплата</h3>
+      <p data-en="300 UAH deposit or full payment. Details in DM.">Предоплата 300 грн или полная оплата. Детали — в ЛС.</p>
     </div>
     <div class="card-info">
       <span class="ic">✅</span>
       <h3>Authentic Only</h3>
-      <p>Только оригинальные вещи. Доп. фото и замеры любой вещи — в ЛС.</p>
+      <p data-en="Only original items. Extra photos and measurements of any item — in DM.">Только оригинальные вещи. Доп. фото и замеры любой вещи — в ЛС.</p>
     </div>
     <div class="card-info">
       <span class="ic">⭐</span>
-      <h3>Отзывы</h3>
+      <h3 data-en="Reviews">Отзывы</h3>
       <p><a href="https://t.me/burnreviewss" target="_blank" rel="noopener">t.me/burnreviewss</a> · <a href="https://www.olx.ua/uk/list/user/uAAV9/" target="_blank" rel="noopener">OLX</a></p>
     </div>
   </div>
@@ -106,12 +107,12 @@
   <div class="wrap foot-inner">
     <div class="logo"><img src="logo.jpg" alt=""><span>burn<b>archive</b></span></div>
     <nav>
-      <a href="https://t.me/burnarchive44" target="_blank" rel="noopener">Канал</a>
+      <a href="https://t.me/burnarchive44" target="_blank" rel="noopener" data-en="Channel">Канал</a>
       <a href="https://t.me/burnadmin" target="_blank" rel="noopener">@burnadmin</a>
-      <a href="https://t.me/burnreviewss" target="_blank" rel="noopener">Отзывы</a>
+      <a href="https://t.me/burnreviewss" target="_blank" rel="noopener" data-en="Reviews">Отзывы</a>
       <a href="https://www.olx.ua/uk/list/user/uAAV9/" target="_blank" rel="noopener">OLX</a>
     </nav>
-    <p class="muted">Обновлено <span id="upd"></span> · © burnarchive</p>
+    <p class="muted"><span data-en="Updated">Обновлено</span> <span id="upd"></span> · © burnarchive</p>
   </div>
 </footer>
 
