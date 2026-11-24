@@ -365,21 +365,23 @@ window.SHOP_DATA = {
    "date": "2026-10-20"
   },
   {
-   "id": 406,
+   "id": 685,
    "brand": "Hysteric Glamour",
-   "name": "Hysteric Glamour Puffer",
+   "name": "Hysteric Glamour ballhog Puffer",
    "type": "куртка",
    "price": 9000,
    "size": "M",
-   "cond": "9.5/10",
+   "cond": "10",
    "status": "in",
-   "desc": "",
+   "desc": "Замеры: длина 65 см, ширина 50 см, плечи 41 см, рукав 62 см.",
    "photos": [
-    "img/406-0.jpg",
-    "img/406-1.jpg"
+    "img/685-0.jpg",
+    "img/685-1.jpg",
+    "img/685-2.jpg"
    ],
-   "post": "https://t.me/burnarchive44/406",
-   "date": "2026-10-26"
+   "post": "https://t.me/burnarchive44/685",
+   "date": "2026-11-24",
+   "sid": 999999
   },
   {
    "id": 394,
