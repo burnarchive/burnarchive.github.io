@@ -237,7 +237,7 @@ window.SHOP_DATA = {
    "price": 3800,
    "size": "M",
    "cond": "8.5/10",
-   "status": "in",
+   "status": "sold",
    "desc": "",
    "photos": [
     "img/541-0.jpg",
