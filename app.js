@@ -28,7 +28,7 @@
   const EUR = 49.61; // курс НБУ, грн за 1 €
   const priceLabel = p => {
     const n = p.options ? Math.min(...p.options.map(o => o.price)) : p.price, pre = p.options ? L('от ', 'from ') : '';
-    return pre + money(n) + (n ? `<small class="eur">${pre}€${Math.ceil(n / EUR)}</small>` : '');
+    return pre + money(n) + (n ? `<small class="eur">${pre}€${(!p.options && p.eur) || Math.ceil(n / EUR)}</small>` : '');
   };
 
   /* ---------- язык ---------- */
