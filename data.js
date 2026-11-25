@@ -210,7 +210,8 @@ window.SHOP_DATA = {
     "img/392-1.jpg"
    ],
    "post": "https://t.me/burnarchive44/392",
-   "date": "2026-10-26"
+   "date": "2026-10-26",
+   "eur": 50
   },
   {
    "id": 543,
