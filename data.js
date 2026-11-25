@@ -142,7 +142,8 @@ window.SHOP_DATA = {
    ],
    "post": "https://t.me/burnarchive44/466",
    "date": "2026-11-10",
-   "desc_en": "Looks vintage — not a minus in my opinion."
+   "desc_en": "Looks vintage — not a minus in my opinion.",
+   "eur": 62
   },
   {
    "id": 579,
@@ -788,7 +789,8 @@ window.SHOP_DATA = {
     "img/402-1.jpg"
    ],
    "post": "https://t.me/burnarchive44/402",
-   "date": "2026-10-26"
+   "date": "2026-10-26",
+   "eur": 20
   },
   {
    "id": 477,
