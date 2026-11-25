@@ -826,26 +826,6 @@ window.SHOP_DATA = {
    "date": "2026-11-19"
   },
   {
-   "id": 507,
-   "brand": "No Name",
-   "name": "Шапка-ушанка #1",
-   "type": "аксессуары",
-   "price": 600,
-   "size": "One size",
-   "cond": "New",
-   "status": "in",
-   "desc": "При покупке любой шмотки — 400₴.",
-   "photos": [
-    "img/507-0.jpg",
-    "img/507-1.jpg",
-    "img/507-2.jpg"
-   ],
-   "post": "https://t.me/burnarchive44/507",
-   "date": "2026-11-10",
-   "name_en": "Ushanka Hat #1",
-   "desc_en": "With any clothing purchase — 400₴ (€9)."
-  },
-  {
    "id": 510,
    "brand": "No Name",
    "name": "Шапка-ушанка #2",
