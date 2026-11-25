@@ -9,7 +9,7 @@ window.SHOP_DATA = {
    "price": 2350,
    "size": "S-M",
    "cond": "9.5",
-   "status": "in",
+   "status": "sold",
    "desc": "Замеры: длина 65 см, ширина 48 см, рукав 64 см, плечи 41 см.",
    "photos": [
     "img/668-0.jpg",
