@@ -328,7 +328,7 @@ window.SHOP_DATA = {
    "name": "Undercover x GU Winter Puffer",
    "type": "куртка",
    "price": 4800,
-   "size": "M, L",
+   "size": "L",
    "cond": "New",
    "status": "in",
    "desc": "",
