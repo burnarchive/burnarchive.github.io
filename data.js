@@ -20,9 +20,9 @@ window.SHOP_DATA = {
    "desc_en": "Measurements: length 65 cm, width 48 cm, sleeve 64 cm, shoulders 41 cm."
   },
   {
-   "id": 666,
-   "brand": "No Name",
-   "name": "Half Coat",
+   "id": 731,
+   "brand": "H&M",
+   "name": "H&M Half Coat",
    "type": "куртка",
    "price": 2000,
    "size": "M",
@@ -30,11 +30,13 @@ window.SHOP_DATA = {
    "status": "in",
    "desc": "Замеры: длина 71 см, ширина 50 см, рукав 64 см, плечи 47 см.",
    "photos": [
-    "img/666-0.jpg",
-    "img/666-1.jpg"
+    "img/731-0.jpg",
+    "img/731-1.jpg",
+    "img/731-2.jpg",
+    "img/731-3.jpg"
    ],
-   "post": "https://t.me/burnarchive44/666",
-   "date": "2026-11-22",
+   "post": "https://t.me/burnarchive44/731",
+   "date": "2026-11-27",
    "desc_en": "Measurements: length 71 cm, width 50 cm, sleeve 64 cm, shoulders 47 cm."
   },
   {
